@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silnia</title>
+</head>
+<body>
+    <h1>Obliczanie silni</h1>
+    
+    <form name="myForm">
+        <p><b>Podaj liczbę:</b>
+        <input type="number" name="myNumber" value="0" size="2"> </p>
+        <input type="reset" value="Clear">
+        <input type="button" value="Oblicz" onclick="obliczSilnie(document.myForm.myNumber.value)">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function obliczSilnie(num) {
+            let result = silnia(num);
+
+            if (result > 0) {
+                document.getElementById("result").innerHTML = "<h3 style='color:blue;'>Silnia liczby " + num + " wynosi: " + result + "</h3>";
+            }
+        }
+
+        function silnia(num) {
+            if(num == 0 || num == 1) {
+                return 1;
+            } else if(num < 0) {
+                error();
+                return -1;
+            }
+
+            var result = num * silnia(num - 1);
+
+            return result;
+        }
+
+        function error() {
+            document.getElementById("result").innerHTML = "<h3 style='color: red;'> Bląd nie można obliczyć silni dla liczby ujemnej! </h3>";
+        }
+    </script>
+</body>
+</html>
