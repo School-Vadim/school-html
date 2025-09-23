@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h1>Functions</h1>
+
+    <script>
+        let num = 2;
+
+        document.write(num, " to the power of 5 = ", power(num, 5), "<br>");
+
+        num = 8;
+
+        document.write(num, " to the power of 2 = ", power(num), "<br>");
+
+        function power(number, power = 2) {
+            let result = 1;
+
+            for(let i = 0; i < power; ++i) {
+                result *= number;
+            }
+
+            return result;
+        }
+    </script>
+</body>
+</html>
