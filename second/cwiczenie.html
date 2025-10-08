@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ćwiczenie</title>
+</head>
+<body>
+    <h1>Ćwiczenie nr. 2</h1>
+    
+    <form name="myForm">
+        <p><b>Podaj liczbę:</b>
+        <input type="number" name="myNumber" value="0" size="2"> </p>
+        <input type="reset" value="Clear">
+        <input type="button" value="Oblicz" onclick="obliczSilnie(document.myForm.myNumber.value)">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function obliczSilnie(num) {
+            num = parseInt(num);
+            if (isNaN(num)) {
+                error("Proszę podać prawidłową liczbę!");
+                return;
+            }
+
+            let result = silnia(num);
+
+            if (result !== undefined) {
+                document.getElementById("result").innerHTML = "<h3 style='color:blue;'>" + result + "</h3>";
+            }
+        }
+
+        function silnia(num) {
+            if (num < 0) {
+                error("Błąd: nie można obliczyć silni dla liczby ujemnej!");
+                return;
+            }
+
+            if (num === 0) {
+                return 1;
+            }
+
+            let result = '';
+            for (let i = 1; i <= num; i++) {
+                result += `${i}, `;
+            }
+
+            return result;
+        }
+
+        function error(message) {
+            document.getElementById("result").innerHTML = `<h3 style='color: red;'>${message}</h3>`;
+        }
+    </script>
+</body>
+</html>
