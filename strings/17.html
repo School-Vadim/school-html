@@ -1,23 +1,21 @@
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-<h1>Obiekt String</hl>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <h1>Obiekt String</h1>
+    <script>
+      var text = "Programowanie aplikacji internetowych";
+      var text2 = " jest super!";
 
-<script>
-var text = "Programowanie aplikacji internetowych";
-var text2 = " jest super!";
+      document.write(text.concat(text2), "<br>");
 
-document.write(text.concat(text2), "<br>");
+      document.write(text2.search("super"), "<br>");
 
-document.write(text2.search("super"), "<br>");
+      document.write(text.replace("aplikacji", "stron"), "<br>");
 
-document.write(text.replace("aplikacji", "stron"), "<br>");
-
-document.write(text.charAt(0), " = ", text.charCodeAt(0), "<br>");
-document.write(text.charAt(5), " ", text.charCodeAt(5), "<br>");
-
-</script>
-</body>
+      document.write(text.charAt(0), " = ", text.charCodeAt(0), "<br>");
+      document.write(text.charAt(5), " ", text.charCodeAt(5), "<br>");
+    </script>
+  </body>
 </html>
